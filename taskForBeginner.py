@@ -12,10 +12,35 @@ def getListOfNumbersFromUser():
             continueToAdding = False
     return listOfNumbers
 
-# 14. Temperature Converter
+# 15. Word Counter
 
+userInput = input(" Give me a sentence to count the number of words in it: ")
+print("{} words in your sentence".format(len(userInput.split())))
 
 exit()
+
+print("====================")
+
+
+
+# 14. Temperature Converter
+def temperatureConverter(temperature, unit):
+    unit = unit.lower()
+    if unit == "c":
+        result = (temperature * 9/5) + 32
+        return f"{temperature} degrees Celsius is {result:.2f} degrees Fahrenheit"
+    elif unit == "f":
+        result = (temperature - 32) * 5/9
+        return f"{temperature} degrees Fahrenheit is {result:.2f} degrees Celsius"
+    else:
+        return "Invalid unit. Please use 'C' or 'F'."
+
+try:
+    temperature = float(input("Input temperature: "))
+    unit = input("Convert to (C or F): ")
+    print(temperatureConverter(temperature, unit))
+except ValueError:
+    print("Please enter a valid number for temperature.")
 
 print("====================")
 
