@@ -1,3 +1,53 @@
+## Functions Partition
+ 
+def getListOfNumbersFromUser():
+    listOfNumbers = []
+    continueToAdding = True
+    while continueToAdding:
+        shouldContinue = input("Add number to list? Input any number or any symbol to skip: ")
+        try:
+            listOfNumbers.append(int(shouldContinue))
+        except ValueError:
+            print("You are skip adding  numbers")
+            continueToAdding = False
+    return listOfNumbers
+
+# 14. Temperature Converter
+
+
+exit()
+
+print("====================")
+
+# 13. Average Calculator
+def avarageCalculator (listOfNumbers):
+    if len(listOfNumbers) == 1:
+        return print("The list contains only one number: {}".format(listOfNumbers[0]))
+    if len(listOfNumbers) >= 2:
+        return print("Avarage in your list is - {}".format(sum(listOfNumbers) / len(listOfNumbers)))
+    else:
+        return print("The list is empty, please add numbers to the list.")
+
+
+avarageCalculator(getListOfNumbersFromUser())
+
+print("====================")
+# 12. Max and Min Finder
+def maxAndMinFinder(listOfNumbers):
+    if len(listOfNumbers) == 1:
+        return print("The list contains only one number: {}".format(listOfNumbers[0]))
+    if len(listOfNumbers) >= 2:
+        minVal = min(listOfNumbers)
+        maxVal = max(listOfNumbers)
+        return print("Minimal number is {}, Maximal is - {}".format(minVal, maxVal))
+    else:
+        return print("The list is empty, please add numbers to the list.")
+
+maxAndMinFinder(getListOfNumbersFromUser())
+
+print("======================")
+
+
 ### 3. Odd or Even Checker
 userReply = input("Write a number between 1 and 100: ")
 userReply = int(userReply)
@@ -116,3 +166,16 @@ countdownTimer(userReply)
 print("======================")
 
 ## 11. Simple Interest Calculator
+def simpleInterestCalculator(principal, rate, time):
+    return (principal * rate * time) / 100
+
+principalAmount = float(input("Please enter the principal amount: "))
+interestRate = float(input("Please enter the rate of interest: "))
+yearsAmount = float(input("Please enter the time in years: "))
+interest = simpleInterestCalculator(principalAmount, interestRate, yearsAmount)
+print("The simple interest is: {:.2f}".format(interest))
+
+print("======================")
+
+
+    
